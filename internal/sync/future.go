@@ -47,10 +47,6 @@ func (f *future[T]) Get(ctx Context) (T, error) {
 		if f.hasValue {
 			cr.MadeProgress()
 
-			if f.err != nil {
-				return *new(T), f.err
-			}
-
 			return f.v, nil
 		}
 
